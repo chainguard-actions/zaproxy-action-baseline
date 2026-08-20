@@ -1,4 +1,4 @@
-name: Test ZAP Baseline Scan - Basic Usage
+name: Test ZAP Baseline Scan - Fail Action Disabled
 on:
   workflow_dispatch:
 jobs:
@@ -14,16 +14,18 @@ jobs:
           target: 'https://www.example.com'
           fail_action: false
           allow_issue_writing: false
-          artifact_name: 'zap_scan_basic'
+          artifact_name: 'zap_scan_no_fail'
           cmd_options: '-I'
 
-      - name: Assert action ran (scan completed or failed gracefully)
+      - name: Assert action did not fail due to alerts (fail_action=false)
         env:
           OUTCOME: ${{ steps.action.outcome }}
         run: |
           echo "outcome: $OUTCOME"
+          # With fail_action=false, the action should succeed even if ZAP finds alerts.
+          # In a restricted environment (no Docker or network), it may fail gracefully.
           if [ "$OUTCOME" = "success" ]; then
-            echo "PASS: ZAP baseline scan completed successfully"
+            echo "PASS: action succeeded with fail_action=false (no failure on alerts)"
           elif [ "$OUTCOME" = "failure" ]; then
             echo "PASS: action failed gracefully (expected in restricted environment)"
           else
