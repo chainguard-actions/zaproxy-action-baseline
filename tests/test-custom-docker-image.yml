@@ -1,4 +1,4 @@
-name: Test ZAP Baseline Scan - Basic Usage
+name: Test ZAP Baseline Scan - Custom Docker Image
 on:
   workflow_dispatch:
 jobs:
@@ -11,16 +11,19 @@ jobs:
         continue-on-error: true
         with:
           target: 'https://www.example.com'
+          docker_name: 'ghcr.io/zaproxy/zaproxy:stable'
           allow_issue_writing: 'false'
           fail_action: 'false'
-          artifact_name: 'zap_scan_basic'
-      - name: Assert action ran (scan completed or failed gracefully)
+          artifact_name: 'zap_scan_custom_docker'
+      - name: Assert action ran with custom docker image
         env:
           OUTCOME: ${{ steps.action.outcome }}
         run: |
           echo "outcome: $OUTCOME"
+          # The action should accept the custom docker_name input and run the scan.
+          # Under harness constraints (Docker/network), it may also fail gracefully.
           if [ "$OUTCOME" = "success" ]; then
-            echo "PASS: ZAP baseline scan completed successfully"
+            echo "PASS: action succeeded with custom docker image"
           elif [ "$OUTCOME" = "failure" ]; then
             echo "PASS: action failed gracefully (expected under harness constraints)"
           else

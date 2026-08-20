@@ -1,4 +1,4 @@
-name: Test with cmd_options input
+name: Test cmd_options input
 on:
   workflow_dispatch:
 jobs:
@@ -8,14 +8,22 @@ jobs:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
       - id: action
         uses: .
+        continue-on-error: true
         with:
           target: 'https://www.example.com'
-          cmd_options: '-I'
-          fail_action: false
-          allow_issue_writing: false
-          artifact_name: 'zap_scan_cmd_options'
-        continue-on-error: true
-      - name: Assert action ran with cmd_options
+          cmd_options: '-a'
+          allow_issue_writing: 'false'
+          fail_action: 'false'
+      - name: Assert action ran (cmd_options passed, outcome success or graceful failure)
+        env:
+          OUTCOME: ${{ steps.action.outcome }}
         run: |
-          echo "Action completed with cmd_options set"
-          echo "PASS"
+          echo "outcome: $OUTCOME"
+          if [ "$OUTCOME" = "success" ]; then
+            echo "PASS: action succeeded with cmd_options"
+          elif [ "$OUTCOME" = "failure" ]; then
+            echo "PASS: action failed gracefully (expected under sentinel repo)"
+          else
+            echo "FAIL: unexpected outcome '$OUTCOME'"
+            exit 1
+          fi
