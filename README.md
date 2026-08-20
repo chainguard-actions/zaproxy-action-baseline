@@ -9,6 +9,7 @@ Hardened by [Chainguard](https://www.chainguard.dev) from the upstream action at
 | Version | Tag | Upstream commit |
 |---------|-----|-----------------|
 | v0.11.0 | [`v0.11.0`](https://github.com/chainguard-actions/zaproxy-action-baseline/tree/v0.11.0) | — |
+| v0.12.0 | [`v0.12.0`](https://github.com/chainguard-actions/zaproxy-action-baseline/tree/v0.12.0) | [`66042c8`](https://github.com/zaproxy/action-baseline/commit/66042c8e7e24680119199a017e5b0e8603bf4dae) |
 | v0.13.0 | [`v0.13.0`](https://github.com/chainguard-actions/zaproxy-action-baseline/tree/v0.13.0) | — |
 | v0.14.0 | [`v0.14.0`](https://github.com/chainguard-actions/zaproxy-action-baseline/tree/v0.14.0) | — |
 | v0.15.0 | [`v0.15.0`](https://github.com/chainguard-actions/zaproxy-action-baseline/tree/v0.15.0) | — |
