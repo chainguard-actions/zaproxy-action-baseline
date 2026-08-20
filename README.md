@@ -12,7 +12,7 @@ Hardened by [Chainguard](https://www.chainguard.dev) from the upstream action at
 | v0.12.0 | [`v0.12.0`](https://github.com/chainguard-actions/zaproxy-action-baseline/tree/v0.12.0) | [`66042c8`](https://github.com/zaproxy/action-baseline/commit/66042c8e7e24680119199a017e5b0e8603bf4dae) |
 | v0.13.0 | [`v0.13.0`](https://github.com/chainguard-actions/zaproxy-action-baseline/tree/v0.13.0) | [`0619037`](https://github.com/zaproxy/action-baseline/commit/0619037bb784a56e2e06b104f0ebe157e076f075) |
 | v0.14.0 | [`v0.14.0`](https://github.com/chainguard-actions/zaproxy-action-baseline/tree/v0.14.0) | — |
-| v0.15.0 | [`v0.15.0`](https://github.com/chainguard-actions/zaproxy-action-baseline/tree/v0.15.0) | — |
+| v0.15.0 | [`v0.15.0`](https://github.com/chainguard-actions/zaproxy-action-baseline/tree/v0.15.0) | [`de8ad96`](https://github.com/zaproxy/action-baseline/commit/de8ad967d3548d44ef623df22cf95c3b0baf8b25) |
 
 ## Privacy
 
