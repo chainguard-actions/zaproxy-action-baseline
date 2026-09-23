@@ -1,7 +1,0 @@
-{
-  "owner": "zaproxy",
-  "name": "action-baseline",
-  "visibility": "internal",
-  "description": "Scans the web application with the ZAP Baseline Scan",
-  "block_publish": false
-}
