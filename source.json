@@ -4,8 +4,13 @@
   "version": "v0.13.0",
   "commit_sha": "0619037bb784a56e2e06b104f0ebe157e076f075",
   "url": "https://github.com/zaproxy/action-baseline",
-  "policy_sha": "d636be7e43ef829af6e853da6b3c7566db9f72fe",
+  "policy_sha": "374911c4be584df24e6da57af2d990570ef0f859",
   "test_policy_sha": "843adf9e4b8f85d0c08b27b9d0b09dd094b54702",
   "test_agent_version": "2",
-  "harden_agent_version": "2"
+  "harden_agent_version": "2",
+  "dist_artifact": {
+    "gcs_uri": "gs://patch-actions-node-artifacts/dist-artifacts/zaproxy/action-baseline/v0.13.0/sha256-c31049ee8ad8f4a1b0e1bc41b8351d4361c168c6eaef5c57a85124aefb2019a1.tar.gz",
+    "sha256": "c31049ee8ad8f4a1b0e1bc41b8351d4361c168c6eaef5c57a85124aefb2019a1",
+    "size_bytes": 428780
+  }
 }
